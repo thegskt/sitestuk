@@ -1,0 +1,670 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos do cabeçalho */
+header {
+  padding: 5px;
+  background-color: #000000;
+}
+
+header a {
+  color: #000000;
+  text-align: left;
+  padding: 1%;
+  position: relative;
+}
+
+.header-wrapper {
+  position: relative;
+}
+
+.header-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+.header-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: rgb(255, 123, 0);
+  margin-bottom: 0;
+}
+
+header a:hover {
+  background-color: orange;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logo-zap {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-zap {
+  width: 300px;
+  margin-left: auto;
+}
+
+.preço-baixo{
+  width: 1100px;
+  margin: auto;
+  position: relative;
+  bottom: 20px; /* Ajuste para não tampar o rodapé */
+  /* right: 20px; */
+  margin-top: 20px; /* Margem negativa para encostar ao header */ 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.preço-baixo img {
+  width: 100%; /* Faz com que a imagem ocupe 100% da largura da div */
+  display: block; /* Remove qualquer espaço extra abaixo da imagem */
+}
+
+
+.jornal{
+  width: 500px;
+  margin: auto;
+  position: relative;
+  bottom: 20px; /* Ajuste para não tampar o rodapé */
+  right: 20px; /* Ajuste para não tampar o rodapé */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos do menu de navegação fixado no topo */
+nav {
+  text-align: center;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  left: 15%;
+}
+
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 25%; /* Ajuste conforme necessário */
+  right: 15%; /* Ajuste conforme necessário */
+  z-index: 1000;
+  background-color: #f0850ce1; /* Cor laranja de fundo */
+}
+
+.nav-fixed a {
+  color: #ffffff; /* Cor branca para o texto */
+  font-size: 16px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+
+}
+
+nav a {
+  color: #d6680d;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 5px 10px;
+  position: relative;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: orange;
+  border-radius: 5px;
+}
+
+/* Estilos dos tooltips */
+nav a::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: #333333;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+nav a:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+}
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+/* Estilos para o tooltip no menu principal */
+nav > ul > li > a::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: #333333;
+  color: #fff;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+nav > ul > li > a:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilos para o submenu */
+nav .submenu {
+  position: relative;
+}
+
+nav .submenu ul {
+  display: none;
+  position: absolute;
+  background-color: orange;
+  border-radius: 5px;
+  padding: 5px 0;
+  top: 100%;
+  left: 0;
+  width: 155px;
+}
+
+nav .submenu:hover ul {
+  display: block;
+}
+
+nav .submenu li {
+  display: block;
+  text-align: center;
+}
+
+nav .submenu li a {
+  color: #fff;
+  display: block;
+  padding: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Estilos do conteúdo principal */
+main {
+  padding: 1rem 1rem 1rem;
+}
+
+/* Estilos do rodapé */
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 0;
+  position: relative; /* Alterado para position: relative */
+  width: 100%;
+  z-index: 100;
+  background-color: rgb(53, 53, 53);
+  clear: both; /* Adicionado para evitar que elementos flutuantes causem sobreposição */
+}
+
+/* Estilo da primeira seção do footer */
+.footer-section1 {
+  background-color: rgb(219, 114, 16);
+  padding: 60px ;
+}
+
+/* Estilo da segunda seção do footer */
+.footer-section2 {
+  background-color: rgb(53, 53, 53);
+  padding: 3px;
+} 
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilo de cada coluna */
+.footer-column {
+  flex: 0.25;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+/* Estilo dos textos em cada coluna */
+.titulo-footer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  /* font-weight: bold; */
+  font-size: 20px; /* Ajuste o tamanho da fonte aqui */
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.subtitulo-footer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  font-weight: bold;
+  font-size: 17px;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+
+/* Estilos da linha separadora */
+.texto-footer {
+  /* height: 1px; */
+  /* background-color: #000000; */
+  margin-top: 3px;
+  margin-bottom: 1px;
+  font-size: 15px;
+  border: none;
+  text-align: justify;
+}
+
+.separador {
+  width: 80%; /* Ajuste a largura desejada */
+  border-top: 0.1px solid #ffffff80; /* Largura da linha */
+  margin-top: 1px; 
+  margin-bottom: 1px; 
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-decoration: none;
+  color: #fff;
+  background-size: 60%; /* Ajustar o tamanho da imagem de fundo */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #ffffff;
+  transition: background-color 0.3s;
+}
+
+.instagram-button {
+  background-color: #000000;
+  background-size: 32px; 
+  background-image: url('imagens/instagram.png');
+}
+
+.facebook-button {
+  background-color: #ffffff;
+  background-size: 40px; 
+  background-image: url('imagens/facebook.png');
+  transition: background-color 0.3s;
+}
+
+.social-buttons-container {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os botões */
+  justify-content: center;
+}
+
+/* Estilos para a seção de imagens */
+.imagens-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+}
+
+.imagens-secao img {
+  width: calc(16.666% - 10px);
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 2px 6px 8px rgba(255, 136, 0, 0.788); /* Adicione esta linha para aplicar a sombra */
+}
+
+.unidades-wrapper {
+  text-align: center;
+  margin-top: 30px; /* Ajuste a margem superior conforme necessário */
+}
+
+.unidades-texto {
+  font-size: 24px;
+  margin-bottom: 10px;
+
+}
+
+.botoes-unidades {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.botao-unidade {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+
+    /* Definir as dimensões do botão */
+    width: 110px; /* Largura desejada */
+    height: 40px; /* Altura desejada */
+    text-align: center;
+    line-height: 40px; /* Alinhar o texto verticalmente */
+}
+
+.botao-unidade:hover {
+  background-color: #ff9900;
+}
+
+
+.texto-destaque {
+  background-color: orange;
+  color: white;
+  text-align: left;
+  padding: 20px 80px;
+  font-size: 18px;
+  font-weight: bold;
+  top: 5px; /* Posição abaixo do header-wrapper */
+  left: 0;
+  width: 88.8%; /* Largura igual à do header-wrapper */
+  margin: 0;
+  font-size: 20px;
+}
+
+.loja-RP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.loja-RP img {
+  width: 80%;
+  height: 430px; /* Ajuste a altura conforme necessário */
+}
+
+h2 {
+  margin-left: 40px;
+  text-decoration: underline;
+}
+
+.titulo-main {
+  font-weight: bold;
+  margin-left: 40px;
+  text-decoration: underline;
+  color:#333333
+}
+
+.texto-main {
+  margin-left: 40px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+h4{
+  font-size: 16px;
+  margin-left: 40px;
+  color:#333333
+}
+
+.conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.mapa {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.cartões-alimentação{
+  margin-left: 1px;
+  display:inline;
+}
+
+.loja-maua {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.loja-maua img {
+  width: 80%;
+  height: 430px; /* Ajuste a altura conforme necessário */
+}
+
+.mega-oferta{
+  width: 1300px;
+  margin: auto;
+  position: relative;
+  bottom: 20px; /* Ajuste para não tampar o rodapé */
+  /* right: 20px; */
+  margin-top: 50px; /* Margem negativa para encostar ao header */ 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mega-oferta img {
+  width: 100%; /* Faz com que a imagem ocupe 100% da largura da div */
+  display: block; /* Remove qualquer espaço extra abaixo da imagem */
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.644); /* Adiciona sombra ao botão */
+}
+
+.texto-botao-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.texto-container {
+  flex: 1;
+  text-align: center;
+}
+
+.validade-ofertas {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center; 
+  color: #535353;
+  margin-right: 330px;
+}
+
+.botao-comprar {
+  background-color: rgb(89, 168, 52);
+  color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s; /* Adiciona uma transição suave para o efeito */
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 240px; /* Adiciona espaçamento à direita do botão */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+  border: 2px solid transparent; /* Define uma borda inicial transparente */
+}
+
+
+.botao-comprar:hover {
+  background-color: rgb(116, 185, 81); /* Muda a cor de fundo quando o mouse está sobre o botão */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a intensidade da sombra ao passar o mouse */
+  border: 3px solid #537c33; /* Muda a cor da borda ao passar o mouse */
+  transform: translateY(3px); /* Move o botão 2 pixels para baixo ao passar o mouse */
+}
+
+.imagem-colunas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.coluna {
+  flex: 1;
+  margin: 0 10px; /* Adiciona espaçamento entre as colunas */
+}
+
+.coluna img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 16px 25px 35px rgba(0, 0, 0, 0.425);
+  margin-right: 50px;
+}
+
+.img-01 {
+  margin-left: 80px;
+}
+
+.img-02 {
+  margin-left: 110px;
+}
+
+.texto-imagem-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  margin-bottom: 200px; 
+}
+
+.texto-feedback {
+  flex: 1;
+  text-align: center;
+}
+
+.feedback {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left; 
+  color: #535353;
+  margin-right: 150px;
+}
+
+.paragrafo-feedback {
+  text-align:justify ;
+  font-family: sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #535353;
+  margin-right: 170px;
+  font-size: 17px;
+}
+
+.fale-conosco{
+  margin-top: 70px;
+  align-items: center;
+  margin: auto;  
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.603);  
+}
+
+.trabalhe-conosco {
+  margin-top: 70px;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.603);
+}
+
+.insta{
+  margin-right: 20px;
+  margin-left: 130px;
+  box-shadow: 5px 25px 35px rgba(0, 0, 0, 0.39);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  border-radius: 50%; /* Metade da largura ou altura para criar um círculo */
+  border: none;
+}
+
+
+.face{
+  box-shadow: 5px 25px 35px rgba(0, 0, 0, 0.39);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  border-radius: 50%; /* Metade da largura ou altura para criar um círculo */
+  border: none;
+}
+
+
+.zap{
+  margin-right: 20px;
+  box-shadow: 5px 25px 35px rgba(0, 0, 0, 0.39);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50px; /* Largura do botão */
+  height: 50px; /* Altura do botão */
+  border-radius: 50%; /* Metade da largura ou altura para criar um círculo */
+  border: none;
+}
